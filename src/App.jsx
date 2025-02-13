@@ -1,9 +1,8 @@
-import LoginPage from './LoginPage'
 import './App.css'
-import LoginScreen from './components/LoginScreen'
+import LandinPage from './LandingPage'
 const App = () => {
   return (
-    <LoginScreen />
+    <LandinPage />
   )
 }
 
