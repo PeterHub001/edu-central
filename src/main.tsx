@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import SignUp from './components/SignUp'
+import SignUp from './components/SignUp.jsx'
 import LoginScreen from './components/LoginScreen.jsx'
 import  ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -10,7 +10,8 @@ import PasswordReset from './components/PasswordReset.jsx'
 import ToEmail from './components/ToEmail.jsx'
 import SetNewPassword from './components/SetNewPassword.jsx'
 import PasswordSuccess from './components/PasswordSuccess.jsx'
-
+import DashboardLayout from './components/DashboardLayout.jsx'
+import UserLandingPage from './components/UserLandingPage'
 
 const router = createBrowserRouter([{
   path: '/',
@@ -40,6 +41,14 @@ const router = createBrowserRouter([{
 {
   path: '/success',
   element: <PasswordSuccess />
+},
+{
+  path: '/userlandingpage',
+  element: <UserLandingPage />
+},
+{
+  path: '/dashboard',
+  element: <DashboardLayout />
 }
 ])
 
@@ -47,4 +56,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
-)
+);

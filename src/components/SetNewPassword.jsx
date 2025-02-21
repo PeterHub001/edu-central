@@ -105,7 +105,7 @@ const SetNewPassword = () => {
                   <div key={option.value} className="flex items-center mb-[12px] ">
                     <input
                       type="radio"
-                      checked={checkedOptions.includes(option.value)}
+                      checked={checkedOptions.includes(option.value)} readOnly
                       className="w-4 h-4 accent-blue-900"
                     />
                     <label

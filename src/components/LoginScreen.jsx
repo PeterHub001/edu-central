@@ -4,9 +4,16 @@ import BackgroundSlider from "./BackgroundSlider";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormikControl from "./FormikControl";
-import { Import } from "lucide-react";
+import { useSidebar } from "../context/SidebarContext";
+import { useNavigate } from "react-router-dom";
+
+
+
+
 
 const LoginScreen = () => {
+  const { setSidebarState } = useSidebar();
+  const navigate = useNavigate()
   const radioOptions = [{ key: "remember me", value: "option1" }];
   const initialValues = {
     email: "",
@@ -20,6 +27,8 @@ const LoginScreen = () => {
   });
   const onSubmit = (values) => {
     console.log("Form data", values);
+    setSidebarState("user")
+    navigate('/UserLandingPage')
   };
   return (
     <div className="container flex w-full max-w-full">
@@ -58,13 +67,15 @@ const LoginScreen = () => {
                   <Link to='/resetpassword' className="font-bold">Forgot password?</Link>
                 </div>
 
-                <button
+               
+               <button
                   className="mt-[100px] px-[180px] h-10 hover:bg-blue-500 rounded-md bg-blue-800 text-white "
                   type="submit"
                   disabled={!formik.isValid}
                 >
                   Login
                 </button>
+               
               </Form>
             )}
           </Formik>
